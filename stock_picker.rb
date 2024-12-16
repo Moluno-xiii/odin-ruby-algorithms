@@ -1,7 +1,7 @@
 def stock_picker(array)
   lowest_price = array[0]
   lowest_index = 0
-  best_days = Array.new
+  best_days = []
   profit = 0
 
   array.each_with_index do |current_price, current_index|
@@ -15,8 +15,8 @@ def stock_picker(array)
       profit = current_price - lowest_price
     end
   end
-  return {profit: profit, best_days: best_days}
+  { profit: profit, best_days: best_days }
 end
 
-stock_array = [17,3,6,9,15,8,6,1,10]
+stock_array = [17, 3, 6, 9, 15, 8, 6, 1, 10]
 p stock_picker(stock_array)
